@@ -1,23 +1,23 @@
 ---
-layout: default
+layout: album
 ---
 
 <html>
 	<head>
 		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0" />
-
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-		<link rel="stylesheet" href="css/magnific-popup.css">
-
 		<title>{{site.album_title}}</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-		<script type="text/javascript" src='/js/jquery.masonry.min.js'></script>
-		<script type="text/javascript" src='/js/jquery.imagesloaded.min.js'></script>
+		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}css/main.css">
+		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}css/magic.css">
+		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}css/magnific-popup.css">
+
+
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script src="css/jquery.magnific-popup.js"></script>
+		<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+		<script type="text/javascript" src="{{ site.baseurl }}js/jquery.magnific-popup.min.js"></script>
+		<script type="text/javascript" src='{{ site.baseurl }}js/imagesloaded.pkgd.min.js'></script>
 
 		<script type="text/javascript">
-			hljs.initHighlightingOnLoad();
 			function applyTiles() {
 				var posts = $('#posts ul');
 				posts.imagesLoaded(function() {
@@ -31,34 +31,48 @@ layout: default
 				applyTiles();
 			});
 		</script>
-		<style type="text/css">
-		</style>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('.post').magnificPopup({
+					delegate: 'a', // child items selector, by clicking on it popup will open
+					type: 'image',
+//					gallery:{enabled:true},
+					removalDelay: 300,
+					mainClass: 'mfp-fade',
+					tLoading: '',
+					closeBtnInside: false,
+					closeOnContentClick: true
+
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<div id='content' class="hp">
-			<div id='posts' class="leftblock">
+			<div class="leftblock">
+				{% include sidebar.html %}
+			</div>
+			<div id='posts' class="rightblock">
 				<ul>
-					{% for post in site.categories.blog %}
-						<li class='post'>
-							{% if post.image %}
-								<a href='{{post.url}}'><img class='post-image' src="{{post.image}}" /></a>
-							{% endif %}
-							<div class="postcontent">
-					<a href='{{post.url}}'><h1 class='post-title'>{{post.title}}</h1></a>
+					{% for post in site.posts %}
+					<li class='post'>
+						{% if post.image %}
+						<a href='{{post.image}}'><img class='post-image' src="{{post.image}}" /></a>
+						{% endif %}
+						<div class="postcontent">
+							<h1 class='post-title'>{{post.title}}</h1>
 
-								<div class='post-content'>{{post.summary}}</div>
-							</div>
-						</li>
+							<div class='post-content'>{{post.summary}}</div>
+						</div>
+					</li>
 					{% endfor %}
 				</ul>
-			</div>
-			<div class="rightblock">
-				{% include sidebar.html %}
 			</div>
 			<div style='clear:both'></div>
 		</div>
 		<div id='footer'>
-			<a href="/about/">About</a> | {{site.full_name}} - {{site.copyright_year}}
+			<a href="about/">About</a> | {{site.full_name}} - {{site.copyright_year}}
 		</div>
 	</div>
 </body>
