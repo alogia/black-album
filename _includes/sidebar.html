@@ -1,11 +1,22 @@
-<div id="albums"> <b>Albums</b>
-</p>
-{% for album in site.categories %}
-<li class="album_list">
-	<a href="/tags/{{album | first}}/">
-		{{ album | first }}
-	</a>
-</li>
-{% endfor %}
+---
+title: Category
+---
 
+{% assign names = "" %}
+{% for album in site.albums %}
+	{% if album.category %}
+		{% assign names = names | append:album.category | append:' ' %}
+	{% endif %}
+{% endfor %}
+{% assign names = names | split:' ' | uniq %}
+
+<div id="albums"> <b>Albums</b>
+	</p>
+	{% for al in names %}  
+		<li class="album_list">
+			<a href="/album/{{al}}/">
+				{{ al }}
+			</a>
+		</li>
+	{% endfor %}
 </div>

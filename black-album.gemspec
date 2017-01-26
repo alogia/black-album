@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "http://github.com/alogia/black-album"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(assets|_layouts|_includes|_sass|LICENSE|README)}i) }
+  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(assets|_layouts|_includes|_sass|css|js|LICENSE|README|_config.black)}i) }
 
   spec.add_runtime_dependency "jekyll", "~> 3.3"
 

@@ -19,13 +19,31 @@ body {
 	border-top: 4px solid #333;
 	background: #111;
 
-/*
-background-color: #F7F7F7;
-background-image: url('http://wpexplorer-demos.com/fabulous/wp-content/themes/wpex-fabulous/images/noise.png');
-background-image: url('http://cdn.elegantthemes.com/preview/Notebook/wp-content/themes/Notebook/images/body-bg.png');
-background-repeat: repeat;*/
-
 }
+
+.landing {
+	font-size: 20px;
+	color: white;
+	top: 0px; 
+	left: 0px;
+	width: 95%;
+	height:95%;
+ 	margin: 10px 10px 10px 10px;
+	padding: 5px;
+	line-height: 20px;
+	font-size: 20px;
+	background-color: #555;
+	background-image: 
+	    linear-gradient(
+	      rgba(0, 0, 0, 0.8),
+	      rgba(0, 0, 0, 0.8)
+	    ),
+	    url(../images/blog/post2.jpg);
+	background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+}
+
 
 body, div, a, input, select, button, textarea {
 	font-family: 'Open Sans', sans-serif;

@@ -1,0 +1,6 @@
+collections:
+        albums: 
+                output: true
+                permalink: /:collection/:categories/:name:output_ext
+                title: albums
+
