@@ -10,7 +10,7 @@
 	</p>
 	{% for al in names %}  
 		<li class="album_list">
-			<a href="/album/{{al}}/">
+			<a href="/albums/{{al | downcase}}.html">
 				{{ al }}
 			</a>
 		</li>
