@@ -3,4 +3,9 @@ collections:
                 output: true
                 permalink: /:collection/:categories/:name:output_ext
                 title: albums
-
+defaults: 
+      - scope: 
+          path: ""
+          type: albums
+        values:
+          layout: album
