@@ -1,64 +1,33 @@
 <html>
 	<head>
 		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{{site.album_title}}</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}css/main.css">
-		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}css/magic.css">
-		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}css/album.css">
-		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}css/magnific-popup.css">
+		<title>{{site.album_title}}</title>
+
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		<link rel="stylesheet" type="text/css" href="/css/magic.css">
+		<link rel="stylesheet" type="text/css" href="/css/album.css">
+		<link rel="stylesheet" type="text/css" href="/css/magnific-popup.css">
 
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-		<script type="text/javascript" src="{{ site.baseurl }}js/jquery.magnific-popup.min.js"></script>
-		<script type="text/javascript" src='{{ site.baseurl }}js/imagesloaded.pkgd.min.js'></script>
-
-		<script type="text/javascript">
-			function applyTiles() {
-				var posts = $('#posts ul');
-				posts.imagesLoaded(function() {
-					$('#posts ul').masonry({ itemSelector : '.post' });;
-				});
-			}
-			$(function() {
-				applyTiles();
-			});
-			$(window).resize(function() {
-				applyTiles();
-			});
-		</script>
-
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$('.popup').magnificPopup({
-					type: 'image',
-//					gallery:{enabled:true},
-					removalDelay: 300,
-					mainClass: 'mfp-fade',
-					tLoading: '',
-					closeBtnInside: false,
-					closeOnContentClick: true
-
-				});
-			});
-		</script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+		<script type="text/javascript" src='/js/imagesloaded.pkgd.min.js'></script>
+		<script type="text/javascript" src="/js/jquery.magnific-popup.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.history.js"></script>
+		<script type="text/javascript" src='/js/black.album.js'></script>
 	</head>
+
 	<body>
-		<div id='content' class="hp">
-			<div class="leftblock">
-				{% include sidebar.html %}
+		<div id='view' class="hp">
+			<div class="leftblock"> {% include sidebar.html %} </div>
+
+			<div id='gallery' class="content rightblock">
+				<ul> {{content}} </ul>
 			</div>
-			<div id='posts' class="rightblock">
-				<ul>
-					{{content}}
-				</ul>
-			</div>
-			<div style='clear:both'></div>
+			
 		</div>
-		<div id='footer'>
-			<a href="about.html">About</a> 
-		</div>
-	</div>
-</body>
+		<div id='footer'> <a href="about.html">About</a> </div>
+	</body>
 </html>
