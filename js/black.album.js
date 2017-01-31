@@ -1,6 +1,7 @@
 //Standard error message if displayed in html
 var msgErr = "<h1>: (</h1><br>I don't know what you want....<br>";
-var galleryTemplate = "/templates/gallery-entry.html"
+var templates = "/template/"
+var galleryTemplate = "gallery-entry.html"
 
 
 //A function to setup image loading code to work with masonry. 
@@ -16,7 +17,8 @@ function applyTiles() {
 function constructGallery(html) {
 
 
-	$.get(galleryTemplate, function(data) {
+	$.get(templates + galleryTemplate, function(templ) {
+//FIXME		$(html).find('a').append($(
 	});
 	var as = $(html).find('a');
 //	console.log(as.length);
