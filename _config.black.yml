@@ -8,4 +8,4 @@ defaults:
           path: ""
           type: albums
         values:
-          layout: album
+          layout: 

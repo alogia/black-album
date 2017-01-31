@@ -9,8 +9,9 @@
 <div id="albums"> <b>Albums</b>
 	</p>
 	{% for al in names %}  
+	{% assign gal = "/albums/" | append:al | downcase | append: ".html" %}
 		<li class="album_list">
-			<a href="/albums/{{al | downcase}}.html">
+			<a href="#" onclick="javascript:loadGallery('{{gal}}')">
 				{{ al }}
 			</a>
 		</li>
