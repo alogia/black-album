@@ -1,42 +1,64 @@
 //Standard error message if displayed in html
+var name="Nick Parnell"
 var msgErr = "<h1>: (</h1><br>I don't know what you want....<br>";
 var templates = "/template/"
-var galleryTemplate = "gallery-entry.html"
-
+var galleryTemplate = "<figure class='gallery-item'> <header class='gallery-icon'> <a class='popup' href='$URL' title='$TITLE' data-caption='© " + name + "'> <img src='$URL'></a> </header><figcaption class='gallery-caption'> <div class='entry-summary'> <h1>Untitled</h1> <p>© " + name + " </p> </div> </figcaption> </figure>"
 
 //A function to setup image loading code to work with masonry. 
 //Loads <figure> classes within the "gallery" ul
 function applyTiles() {
-	var gallery = $('#gallery ul');
+	var gallery = $('#gallery');
+	gallery.masonry({ itemSelector : '.gallery-item' });;
 	gallery.imagesLoaded(function() {
-		$('#gallery ul').masonry({ itemSelector : '.figure' });;
+		gallery.masonry({ itemSelector : '.gallery-item' });;
 	});
 }
 
 // Build the gallery from the gallery template
 function constructGallery(html) {
-
-
-	$.get(templates + galleryTemplate, function(templ) {
-//FIXME		$(html).find('a').append($(
+	var items = "";
+	$(html).find('a').each(function () {
+		items += galleryTemplate.replace(/\$URL/g, $(this).attr('href')).replace(/\$TITLE/g, $(this).text());
 	});
-	var as = $(html).find('a');
-//	console.log(as.length);
-	return as;
+
+	return items;
 }
 
 
 function loadGallery(url) {
 	
+	var links;
 	//var image = window.location.host + "/images/" + name;
-	$.get(url, function(data) {
-			var lnks = constructGallery(data);
-			// Inject the modified HTML into the gallery object.
-			$('#gallery').html(lnks);
+	$.get(url, function(data) { 
+		links = data; 
+		$('#gallery').append(constructGallery(links));
+		refresh();
+	});
+	
+}
+
+//Setup Magnific-popup code for galleries,
+//with some fading. 
+//Loads class=popup
+function initPopups() {
+
+	console.log($('.gallery-item').length);
+	$(document).find('.popup').magnificPopup({
+		type: 'image',
+		gallery:{enabled:false}, // Enable?
+		removalDelay: 300,
+		mainClass: 'mfp-fade',
+		closeBtnInside: false,
+		closeOnContentClick: true
+
 	});
 
 }
 
+function refresh() {
+	applyTiles();
+	initPopups();
+}
 
 // Doc's ready, Bro
 $(document).ready(function($) {
@@ -53,21 +75,9 @@ $(document).ready(function($) {
 
 
 	//Rebind widow resize events to take place with imagesLoaded.js and masonry.js
-	applyTiles();
 	$(window).resize(function() {
 		applyTiles();
 	});
 
-	//Setup Magnific-popup code for galleries,
-	//with some fading. 
-	//Loads class=popup
-	$('.popup').magnificPopup({
-		type: 'image',
-		gallery:{enabled:false}, // Enable?
-		removalDelay: 300,
-		mainClass: 'mfp-fade',
-		closeBtnInside: false,
-		closeOnContentClick: true
 
-	});
 });

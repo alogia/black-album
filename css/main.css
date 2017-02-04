@@ -55,15 +55,6 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 400;
 }
-
-code {
-	font-weight: bold;
-}
-
-pre code {
-	font-weight: normal;
-}
-
 a {
 /*
 	color: rgba(80, 160, 228);
@@ -154,14 +145,14 @@ h1 {
 	background: #111;
 }
 
-#posts ul {
+#gallery {
 	list-style:none;
 	margin: auto;
 	padding: 0px;
 	width: 80%;
 }
 
-#posts ul li {
+#gallery figure {
     margin: 0px 20px 20px 0px;
     width: 250px;
     float: left;
@@ -172,11 +163,8 @@ h1 {
     border-radius: 0;
     box-shadow: none;
 }
-#posts ul li img {
-	//width: 95%;
-}
 
-.gallery-entry {
+.gallery-item {
 	position: absolute;
 	line-height: 20px;
 	font-size: 20px;
@@ -195,16 +183,11 @@ h1 {
 	    );
 }
 
-.post-image{
+.gallery-image{
 	width: 250px;
 	box-shadow: 0 0px 0px #cccccc;
 	border-radius: 0px;
     	//margin: 10px 0px 10px 0px;
-}
-
-.post-date {
-	font-size: 11px;
-	color: #666;padding: 10px;
 }
 
 .post-content {
