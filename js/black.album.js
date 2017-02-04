@@ -2,15 +2,15 @@
 var name="Nick Parnell"
 var msgErr = "<h1>: (</h1><br>I don't know what you want....<br>";
 var templates = "/template/"
-var galleryTemplate = "<figure class='gallery-item'> <header class='gallery-icon'> <a class='popup' href='$URL' title='$TITLE' data-caption='© " + name + "'> <img src='$URL'></a> </header><figcaption class='gallery-caption'> <div class='entry-summary'> <h1>Untitled</h1> <p>© " + name + " </p> </div> </figcaption> </figure>"
+var galleryTemplate = "<figure class='gallery-item'> <header class='gallery-icon'> <a class='popup' href='$URL' title='$TITLE' data-caption='© " + name + "'> <img src='$URL'></a> </header><figcaption class='gallery-caption'> <div class='entry-summary'> <h3>$TITLE</h3> <p>© " + name + " </p> </div> </figcaption> </figure>"
+var $gallery;
 
 //A function to setup image loading code to work with masonry. 
 //Loads <figure> classes within the "gallery" ul
 function applyTiles() {
-	var gallery = $('#gallery');
-	gallery.masonry({ itemSelector : '.gallery-item' });;
-	gallery.imagesLoaded(function() {
-		gallery.masonry({ itemSelector : '.gallery-item' });;
+	$gallery = $('#gallery').masonry({ itemSelector : '.gallery-item' });
+	$gallery.imagesLoaded(function() {
+		$gallery.masonry({ itemSelector : '.gallery-item' });;
 	});
 }
 
@@ -18,20 +18,23 @@ function applyTiles() {
 function constructGallery(html) {
 	var items = "";
 	$(html).find('a').each(function () {
-		items += galleryTemplate.replace(/\$URL/g, $(this).attr('href')).replace(/\$TITLE/g, $(this).text());
+		items += galleryTemplate.replace(/\$URL/g, "/images/" + $(this).attr('href')).replace(/\$TITLE/g, $(this).text());
 	});
 
 	return items;
 }
 
 
+// Loads a gallery ajax style, and refreshes the layout. 
 function loadGallery(url) {
 	
-	var links;
-	//var image = window.location.host + "/images/" + name;
+	//$('#gallery').addClass('hidden');
 	$.get(url, function(data) { 
-		links = data; 
-		$('#gallery').append(constructGallery(links));
+//		$('#gallery').empty(); //unload old gallery
+		$gallery.masonry('remove', $gallery.children());
+		var $figs = $(constructGallery(data));
+		$gallery.append($figs);
+		$gallery.masonry('appended', $figs);
 		refresh();
 	});
 	
@@ -42,7 +45,6 @@ function loadGallery(url) {
 //Loads class=popup
 function initPopups() {
 
-	console.log($('.gallery-item').length);
 	$(document).find('.popup').magnificPopup({
 		type: 'image',
 		gallery:{enabled:false}, // Enable?
@@ -55,6 +57,7 @@ function initPopups() {
 
 }
 
+//basic refresh function to call when any change
 function refresh() {
 	applyTiles();
 	initPopups();
@@ -78,6 +81,7 @@ $(document).ready(function($) {
 	$(window).resize(function() {
 		applyTiles();
 	});
+	refresh();
 
 
 });
