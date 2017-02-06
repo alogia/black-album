@@ -6,7 +6,6 @@
 		<title>{{site.album_title}}</title>
 
 		<link rel="stylesheet" type="text/css" href="/css/main.css">
-		<link rel="stylesheet" type="text/css" href="/css/magic.css">
 		<link rel="stylesheet" type="text/css" href="/css/album.css">
 		<link rel="stylesheet" type="text/css" href="/css/magnific-popup.css">
 
@@ -20,10 +19,11 @@
 	</head>
 
 	<body>
-		<div id='view' class="hp">
-			<div class="leftblock"> {% include sidebar.html %} </div>
-
-			<div id='gallery' class="content rightblock"> {{content}} </div>
+		<div id='view'>
+			<div id='left-side'>
+				{% include menu.html %}
+			</div>
+			<div id='gallery'> {{content}} </div>
 			
 		</div>
 		<div id='footer'> <a href="about.html">About</a> </div>

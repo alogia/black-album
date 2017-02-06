@@ -6,14 +6,18 @@
 {% endfor %}
 {% assign names = names | split:' ' | uniq %}
 
-<div id="albums"> <b>Albums</b>
+<link rel="stylesheet" type="text/css" href="/css/menu.css">
+
+<div id="menu"> <b>Galleries</b>
 	</p>
+	<ul class="active">
 	{% for al in names %}  
 	{% assign gal = "/albums/" | append:al | downcase | append: ".html" %}
 		<li class="album_list">
-			<a href="#" onclick="javascript:loadGallery('{{gal}}')">
+			<a href="#" onclick="javascript:loadGallery('{{gal}}', '{{al}}')">
 				{{ al }}
 			</a>
 		</li>
 	{% endfor %}
+</ul>
 </div>

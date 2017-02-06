@@ -2,6 +2,7 @@
 	content:""; 
 	display: block; 
 	clear: both; 
+	originLeft: false;
 }
 .gallery-item { 
 	position: relative; 

@@ -8,16 +8,17 @@ img, embed, object{
 }
 
 
-.postcontent{
-	//padding : 10px;
+html { 
+	hight 100%;
 }
 
 body {
 	margin: 0px;
 	text-align: center;
-	padding: 0px 20px 0px 20px;
+	padding: 0px 0px 0px 20px;
 	border-top: 4px solid #333;
 	background: #111;
+	height 100%
 
 }
 
@@ -55,10 +56,8 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 400;
 }
+
 a {
-/*
-	color: rgba(80, 160, 228);
-	font-size: 100%;*/
 	color: #444444;
 	text-decoration: none;
 }
@@ -85,34 +84,13 @@ h1 {
 
 
 #layout {
-	/width: 90%;
 	margin: auto;
 	text-align: left;
-}
-
-#heading {
-	margin: 20px 0px 40px 0px;
-	position: relative;
-	padding: 0px 0px 15px 0px;
-	border-bottom: 0px solid #eee;
-}
-
-#logo {
-	float: left;
-	font-size: 20px;
 }
 
 #links a {
 	color: #666;
 }
-
-#logo a {
-    font-size: 20px;
-    color: #666;
-    text-decoration: none;
-    font-family: "Raleway";
-}
-
 
 #links {
 	float: right;
@@ -129,33 +107,38 @@ h1 {
 }
 
 #view {
-	margin: 0px 15% 0px ;
 	background: #f4f4f4;
 	padding-top: 20px;
-	margin-top: 40px;
+	overflow: auto;
+	padding-bottom: 20px; /* must be same height as the footer */
+	height:90%;
+	z-index: 1;
 }
 
 
 #footer {
-	margin: 30px 0px 0px 0px;
-	padding: 10px 0px 10px 0px;
-	border-top: 1px solid #dddddd;
+	position: relative;
 	text-align: center;
 	font-size: 13px;
 	background: #111;
+	margin-top: -20px; /* negative value of footer height */
+	height: 20px;
+	clear: both;
+	z-index:2;
 }
 
 #gallery {
 	list-style:none;
 	margin: auto;
 	padding: 0px;
-	width: 80%;
+	margin-left: 120px;
+	background: #222;
 }
 
 #gallery figure {
-    margin: 0px 20px 20px 0px;
+    margin: 0px 0px 20px 20px;
     width: 250px;
-    float: left;
+    float: right;
     border-radius: 3px;
     border: 0px solid #eee;
     background: #222!important;
@@ -164,23 +147,12 @@ h1 {
     box-shadow: none;
 }
 
-#side-bar {
-	background: none repeat scroll 0% 0% #FFF;
-	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
-	border-radius: 3px;
-	/*border: solid 1px rgba(99, 103, 106, 0.22);*/
-	padding: 10px;
-	width: 20%;
+#left-side {
+	padding: 5px;
+	height: 100%;
+	width: 100px;
 	float: left;
-	margin: 20px 5px 0px 0px;
-}
-
-#side-bar #date {
-	font-size: 11px;
-}
-
-#albums b {
-	font-variant: normal;
+/*	background-color: #222; */
 }
 
 #page-title {
@@ -206,37 +178,12 @@ h1 {
 	//border: solid 1px rgba(99, 103, 106, 0.22);
 }
 
-.tag {
-	font-size: 12px;
-	padding: 2px 6px 2px 6px;
-	color: white;
-	line-height: 24px;
-}
-
-blockquote{
-
-	font-family: monospace;
-	font-size: 16px;
-	/*font-style: italic;*/
-	border-left: 4px solid #ddd;
-	padding-left: 20px;
-}
-
-.tag { background-color: #008080}
-
-
 /****** Media Queries For Adaptive Layouts******/
 
-@media only screen and (min-width: 1367) {
-
-	#posts ul li {
-		width: 220px;
-	}
-}
 
 @media only screen and (max-width: 1366) {
 
-	#posts ul li {
+	#gallery figure {
 		width: 273px;
 	}
 }
@@ -244,7 +191,7 @@ blockquote{
 /* Tables - Landscape */
 @media only screen and (max-width: 1280) {
 
-	#posts ul li {
+	#gallery figure {
 		width: 252px;
 	}
 
@@ -255,7 +202,7 @@ blockquote{
 only screen and (max-device-width:1024px),
 only screen and (max-width: 1024px) {
 
-	#posts ul li {
+	#gallery figure {
 		width: 265px;
 	}
 
@@ -266,7 +213,7 @@ only screen and (max-width: 1024px) {
 only screen and (max-device-width:768px),
 only screen and (max-width: 768px) {
 
-	#posts ul li {
+	#gallery figure {
 		width: 300px;
 	}
 }
@@ -276,7 +223,7 @@ only screen and (max-width: 768px) {
 only screen and (max-device-width:600px),
 only screen and (max-width: 600px) {
 
-	#logo, #links {
+	#links {
 		float: none;
 		text-align: center;
 	}
@@ -285,15 +232,15 @@ only screen and (max-width: 600px) {
 		margin: 0 0 0 0;
 	}
 
-	#posts ul li {
-		width: 95%;
+	#gallery figure {
+		width: 80%;
 	}
 
-	#side-bar {
+	#menu {
 		display: none;
 	}
 
-	#page {
+	#gallery {
 		border-left: 0px;
 		width: 100%;
 		margin: 0 0 0 0 ;
@@ -306,75 +253,26 @@ only screen and (max-width: 600px) {
 }
 
 
-.post-content {
-	background: 
-	    linear-gradient(
-	      to bottom,
-	      rgba(0, 0, 0, 0),
-	      rgba(0, 0, 0, 0.5)
-	    );
-	border-radius: 0;
-	color: #444;
-}
-
-
-section{
-	background-image: url('/images/18asaigon-hero.jpg');
-	background-size: cover;
-background-position: center;
-	height:100px;
-	width:100%;
-	margin-bottom: 40px;
-}
-
-h1.gallery-entry {
+.gallery-entry {
 	font-weight:800;
 	color: white;
 	text-shadow: 0 0px 0 black;
 	font-variant: small-caps;
 }
 
-#footer {
-    border-top: 0px solid #dddddd;
-    color: #444;
-}
-
-
-
-/* remake homepage */
-
-#posts.rightblock, .leftblock {width:100%}
-#view.hp{background: transparent}
-.leftblock{color:#444;text-align:left}
-.leftblock b, .leftblock strong, .leftblock a {color: #555}
 
 @media (min-width: 770px) {
-	#heading {
-		padding: 25px 0px 20px 0px;
-		position: relative;
-		border-bottom: 0px solid #eee;
-		max-width: 1100px;
+	#view {
 		margin: 0 auto;
-		height: 40px;
-		}
-section#home-hero{
-	max-width: 1100px;
-	margin: 0 auto;
-}
-	#view.hp{
-		margin: 0 auto;background:transparent;padding-top: 40px;
+		background:transparent;
+		padding-top: 40px;
 		max-width:1100px;
 	}
-	#posts.rightblock {
-		width: 90%;
-	float: left;
-	}
-	#posts ul{width:100%}
-	.leftblock{
-		width:10%;
-		float:left;
-	}
-	.leftblock b, .leftblock strong, .leftblock a {color: #555}
+	#menu b, #menu strong, #menu a {color: #555}
+
+}
+
+@media only screen and (min-width: 1367) {
 
 }
 
@@ -384,6 +282,6 @@ section#home-hero{
 		background: #f4f4f4;
 		padding: 20px;
 		margin-top: 40px;
-		color: #555!important;
-		}
+		color: #555 !important;
+	}
 }
