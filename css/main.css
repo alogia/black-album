@@ -1,15 +1,12 @@
+
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 @import url(http://fonts.googleapis.com/css?family=Doppio+One);
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 
 
+
 img, embed, object{
 	max-width: 100%;
-}
-
-
-html { 
-	hight 100%;
 }
 
 body {
@@ -21,30 +18,6 @@ body {
 	height 100%
 
 }
-
-.landing {
-	font-size: 20px;
-	color: white;
-	top: 0px; 
-	left: 0px;
-	width: 95%;
-	height:95%;
- 	margin: 10px 10px 10px 10px;
-	padding: 5px;
-	line-height: 20px;
-	font-size: 20px;
-	background-color: #555;
-	background-image: 
-	    linear-gradient(
-	      rgba(0, 0, 0, 0.8),
-	      rgba(0, 0, 0, 0.8)
-	    ),
-	    url(../images/blog/post2.jpg);
-	background-repeat: no-repeat;
-        background-position: center;
-        background-attachment: fixed;
-}
-
 
 body, div, a, input, select, button, textarea {
 	font-family: 'Open Sans', sans-serif;
@@ -82,6 +55,13 @@ h1 {
 	font-weight: normal;
 }
 
+.invisible {
+	display:none;
+}
+
+.visible {
+	display:inline-block;
+}
 
 
 #links {
@@ -105,178 +85,16 @@ h1 {
 
 #view {
 	background: #111;
-	overflow: auto;
 }
-
 
 #footer {
 	text-align: center;
+	font-variant: small-caps;
 	font-size: 13px;
 	background: #111;
 }
 
 #footer a {
 	color: #eee;
-}
-
-#gallery {
-	margin: 0 auto;
-	list-style:none;
-	background: #111;
-}
-
-#gallery figure {
-    border-radius: 3px;
-    border: 0px solid #eee;
-    background: #222!important;
-    background: none repeat scroll 0% 0% #FFF;
-    border-radius: 0;
-    box-shadow: none;
-}
-
-
-#page {
-	margin-top: 20px;
-	width: 80%;
-	color: #111;
-	margin-left: 10%;
-	text-align: left;
-	padding-left: 3%;
-	border-left: 1px dashed #ddd;
-	font-size: 1em;
-	overflow: hidden;
-	border-radius: 3px;
-	padding: 10px;
-	//border: solid 1px rgba(99, 103, 106, 0.22);
-}
-
-/****** Media Queries For Adaptive Layouts******/
-
-
-/* Hides the gallery menu under 440px */
-@media only screen and (max-width: 440px) {
-
-	body {
-		margin: 0px;
-		padding: 0px;
-		background: #111;
-		height 100%
-
-	}
-
-	#block1 {
-		top:0px;
-		left:0px;
-		width:100%;
-		height:30px;
-		position:absolute;
-		clear:both;
-		background:red;
-	}
-
-	#menu ul {
-		list-style-type: none;
-	}
-
-	#gallery figure {
-		width:90%;
-	}
-
-	#gallery {
-		top:30px;
-		width: 100%;
-		list-style:none;
-		padding: 0px;
-		background: purple;
-	}
-
-	#footer {
-		position: fixed;
-		margin-top: -20px;
-		height: 20px;
-		width: 100%;
-		bottom:0px;
-	}
-}
-
-/* For all screens over 440px, show the gallery menu on the left side */
-@media only screen and (min-width: 441px) {
-
-	#block1 {
-		padding: 5px;
-		height: 100%;
-		width: 100px;
-		float: left;
-	}
-
-	#block2 {
-		margin-left:120px;
-	}
-
-	#gallery {
-		margin: 0 auto;
-		padding: 0px;
-	}
-
-	#footer {
-		position: fixed;
-		margin-top: -20px;
-		height: 20px;
-		width: 100px;
-		left:15px;
-		bottom:0px;
-	}
-
-	#view {
-		height:100%;
-	}
-
-}
-
-@media only screen and (min-width: 441px) and (max-width: 580px) {
-/*
-	#gallery {
-		background: brown;
-	}
-	*/
-	#gallery figure {
-		margin: 10px;
-		width: 260px;
-		float: right;
-	}
-}
-
-@media only screen and (min-width: 580px) and (max-width: 800px) {
-	#gallery {
-		background: red;
-	}
-	#gallery figure {
-		margin: 10px;
-		width: 200px;
-		float: right;
-	}
-}
-
-@media only screen and (min-width:800px) and (max-width: 1024px) {
-/*
-	#gallery {
-		background: blue;
-	}
-	*/
-	#gallery figure {
-		margin: 10px;
-		width: 195px;
-		float: right;
-	}
-
-}
-
-@media only screen and (min-width: 1025px) {
-	#gallery figure {
-		margin: 10px;
-		width: 250px;
-		float: left;
-	}
-
 }
 

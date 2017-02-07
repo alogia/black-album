@@ -1,0 +1,14 @@
+#page {
+	margin-top: 20px;
+	width: 80%;
+	color: #111;
+	margin-left: 10%;
+	text-align: left;
+	padding-left: 3%;
+	border-left: 1px dashed #ddd;
+	font-size: 1em;
+	overflow: hidden;
+	border-radius: 3px;
+	padding: 10px;
+	//border: solid 1px rgba(99, 103, 106, 0.22);
+}

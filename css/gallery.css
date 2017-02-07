@@ -1,0 +1,199 @@
+#gallery {
+	margin: 0 auto;
+	list-style:none;
+	background: #111;
+}
+
+#gallery figure {
+    border-radius: 3px;
+    border: 0px solid #eee;
+    background: #222!important;
+    background: none repeat scroll 0% 0% #FFF;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+#gallery::after { 
+	content:""; 
+	display: block; 
+	clear: both; 
+}
+.gallery-item { 
+	position: relative; 
+	display: block; 
+	width: auto; 
+}
+
+.gallery-caption { 
+	position: absolute; 
+	left: 0; 
+	right: 0; 
+	bottom: 0; 
+	width: 50%; 
+	z-index: 10; 
+	pointer-events: none; 
+}
+.gallery-caption .entry-summary { 
+	display: inline-block; 
+	position: absolute; 
+	width: 100%; 
+	left 0;
+	bottom: 0; 
+	color: #F7F6F5; 
+	opacity: 0;
+	-webkit-transition: all .8s ease; 
+	-moz-transition: all .8s ease; 
+	-ms-transition: all .8s ease; 
+	-o-transition: all .8s ease; 
+	transition: all .8s ease; 
+}
+
+.gallery-item:hover .gallery-caption .entry-summary { 
+	opacity: 1; 
+}
+
+.gallery-caption h3  { 
+	font-weight: bold; 
+	text-transform: uppercase; 
+	font-size: .9em; 
+	letter-spacing: 0.05em; 
+}
+
+.gallery-caption .entry-summary > p { 
+	font-family: Times, serif; 
+	font-style: italic; 
+	font-size: .8em; 
+	opacity: .8; 
+}
+
+/****** Media Queries For Adaptive Layouts******/
+
+
+/* Hides the gallery menu under 440px */
+@media only screen and (max-width: 440px) {
+
+	body {
+		margin: 0px;
+		padding: 0px;
+		background: #111;
+		height 100%
+
+	}
+
+	#block1 {
+		top:0px;
+		left:0px;
+		width:100%;
+		height:30px;
+		position:absolute;
+		clear:both;
+		background:red;
+	}
+
+	#menu ul {
+		list-style-type: none;
+	}
+
+	#gallery figure {
+		width:90%;
+	}
+
+	#gallery {
+		top:30px;
+		width: 100%;
+		list-style:none;
+		padding: 0px;
+		background: purple;
+	}
+
+	#footer {
+		position: fixed;
+		margin-top: -20px;
+		height: 20px;
+		width: 100%;
+		bottom:0px;
+	}
+}
+
+/* For all screens over 440px, show the gallery menu on the left side */
+@media only screen and (min-width: 441px) {
+
+	#block1 {
+		margin-top:20px;
+		padding: 5px;
+		height: 100%;
+		width: 100px;
+		float: left;
+	}
+
+	#block2 {
+		margin-left:120px;
+	}
+
+	#gallery {
+		margin: 0 auto;
+		padding: 0px;
+	}
+
+	#footer {
+		position: fixed;
+		margin-top: -20px;
+		height: 20px;
+		width: 100px;
+		left:15px;
+		bottom:0px;
+	}
+
+	#view {
+		height:100%;
+	}
+
+}
+
+@media only screen and (min-width: 441px) and (max-width: 580px) {
+/*
+	#gallery {
+		background: brown;
+	}
+	*/
+	#gallery figure {
+		margin: 10px;
+		width: 260px;
+		float: right;
+	}
+}
+
+@media only screen and (min-width: 580px) and (max-width: 800px) {
+	#gallery {
+		background: red;
+	}
+	#gallery figure {
+		margin: 10px;
+		width: 200px;
+		float: right;
+	}
+}
+
+@media only screen and (min-width:800px) and (max-width: 1024px) {
+/*
+	#gallery {
+		background: blue;
+	}
+	*/
+	#gallery figure {
+		margin: 10px;
+		width: 195px;
+		float: right;
+	}
+
+}
+
+@media only screen and (min-width: 1025px) {
+	#gallery figure {
+		margin: 10px;
+		width: 250px;
+		float: left;
+	}
+
+}
+
