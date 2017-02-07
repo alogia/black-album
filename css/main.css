@@ -83,14 +83,6 @@ h1 {
 }
 
 
-#layout {
-	margin: auto;
-	text-align: left;
-}
-
-#links a {
-	color: #666;
-}
 
 #links {
 	float: right;
@@ -98,47 +90,42 @@ h1 {
 	color: #eee;
 }
 
+#links a {
+	color: #666;
+}
+
+
 #links img {
 
 	box-shadow: 0 0px 0px #cccccc;
 	border-radius: 0px;
-    padding: 0px;
-    margin-bottom: 10px;
+	padding: 0px;
+	margin-bottom: 10px;
 }
 
 #view {
-	background: #f4f4f4;
-	padding-top: 20px;
+	background: #111;
 	overflow: auto;
-	padding-bottom: 20px; /* must be same height as the footer */
-	height:90%;
-	z-index: 1;
 }
 
 
 #footer {
-	position: relative;
 	text-align: center;
 	font-size: 13px;
 	background: #111;
-	margin-top: -20px; /* negative value of footer height */
-	height: 20px;
-	clear: both;
-	z-index:2;
+}
+
+#footer a {
+	color: #eee;
 }
 
 #gallery {
+	margin: 0 auto;
 	list-style:none;
-	margin: auto;
-	padding: 0px;
-	margin-left: 120px;
-	background: #222;
+	background: #111;
 }
 
 #gallery figure {
-    margin: 0px 0px 20px 20px;
-    width: 250px;
-    float: right;
     border-radius: 3px;
     border: 0px solid #eee;
     background: #222!important;
@@ -147,21 +134,6 @@ h1 {
     box-shadow: none;
 }
 
-#left-side {
-	padding: 5px;
-	height: 100%;
-	width: 100px;
-	float: left;
-/*	background-color: #222; */
-}
-
-#page-title {
-	margin-top: 0px;
-	padding-top: 0px;
-	font-size: 20px;
-	color:#222;
-	font-weight: 800;
-}
 
 #page {
 	margin-top: 20px;
@@ -181,107 +153,130 @@ h1 {
 /****** Media Queries For Adaptive Layouts******/
 
 
-@media only screen and (max-width: 1366) {
+/* Hides the gallery menu under 440px */
+@media only screen and (max-width: 440px) {
 
-	#gallery figure {
-		width: 273px;
-	}
-}
+	body {
+		margin: 0px;
+		padding: 0px;
+		background: #111;
+		height 100%
 
-/* Tables - Landscape */
-@media only screen and (max-width: 1280) {
-
-	#gallery figure {
-		width: 252px;
 	}
 
-}
-
-/* Tables - Landscape */
-@media
-only screen and (max-device-width:1024px),
-only screen and (max-width: 1024px) {
-
-	#gallery figure {
-		width: 265px;
+	#block1 {
+		top:0px;
+		left:0px;
+		width:100%;
+		height:30px;
+		position:absolute;
+		clear:both;
+		background:red;
 	}
 
-}
-
-/* Tables - Verticle */
-@media
-only screen and (max-device-width:768px),
-only screen and (max-width: 768px) {
-
-	#gallery figure {
-		width: 300px;
-	}
-}
-
-/* Smart Phone */
-@media
-only screen and (max-device-width:600px),
-only screen and (max-width: 600px) {
-
-	#links {
-		float: none;
-		text-align: center;
-	}
-
-	#links {
-		margin: 0 0 0 0;
+	#menu ul {
+		list-style-type: none;
 	}
 
 	#gallery figure {
-		width: 80%;
-	}
-
-	#menu {
-		display: none;
+		width:90%;
 	}
 
 	#gallery {
-		border-left: 0px;
+		top:30px;
 		width: 100%;
-		margin: 0 0 0 0 ;
-		padding: 0 0 0 0 ;
+		list-style:none;
+		padding: 0px;
+		background: purple;
 	}
 
-	#page img {
+	#footer {
+		position: fixed;
+		margin-top: -20px;
+		height: 20px;
 		width: 100%;
+		bottom:0px;
 	}
 }
 
+/* For all screens over 440px, show the gallery menu on the left side */
+@media only screen and (min-width: 441px) {
 
-.gallery-entry {
-	font-weight:800;
-	color: white;
-	text-shadow: 0 0px 0 black;
-	font-variant: small-caps;
-}
+	#block1 {
+		padding: 5px;
+		height: 100%;
+		width: 100px;
+		float: left;
+	}
 
+	#block2 {
+		margin-left:120px;
+	}
 
-@media (min-width: 770px) {
-	#view {
+	#gallery {
 		margin: 0 auto;
-		background:transparent;
-		padding-top: 40px;
-		max-width:1100px;
+		padding: 0px;
 	}
-	#menu b, #menu strong, #menu a {color: #555}
 
-}
+	#footer {
+		position: fixed;
+		margin-top: -20px;
+		height: 20px;
+		width: 100px;
+		left:15px;
+		bottom:0px;
+	}
 
-@media only screen and (min-width: 1367) {
-
-}
-
-@media (max-width:770px) {
 	#view {
-		margin: 0;
-		background: #f4f4f4;
-		padding: 20px;
-		margin-top: 40px;
-		color: #555 !important;
+		height:100%;
+	}
+
+}
+
+@media only screen and (min-width: 441px) and (max-width: 580px) {
+/*
+	#gallery {
+		background: brown;
+	}
+	*/
+	#gallery figure {
+		margin: 10px;
+		width: 260px;
+		float: right;
 	}
 }
+
+@media only screen and (min-width: 580px) and (max-width: 800px) {
+	#gallery {
+		background: red;
+	}
+	#gallery figure {
+		margin: 10px;
+		width: 200px;
+		float: right;
+	}
+}
+
+@media only screen and (min-width:800px) and (max-width: 1024px) {
+/*
+	#gallery {
+		background: blue;
+	}
+	*/
+	#gallery figure {
+		margin: 10px;
+		width: 195px;
+		float: right;
+	}
+
+}
+
+@media only screen and (min-width: 1025px) {
+	#gallery figure {
+		margin: 10px;
+		width: 250px;
+		float: left;
+	}
+
+}
+

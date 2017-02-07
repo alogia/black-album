@@ -44,8 +44,10 @@ function loadGallery(url, name) {
 		var $figs = $(constructGallery(data, name));
 		$gallery.append($figs);
 		$gallery.masonry('appended', $figs);
+		$('#menu-title').text(name);
 		refresh();
 	});
+
 	
 }
 
