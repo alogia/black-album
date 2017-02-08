@@ -36,19 +36,30 @@ function constructGallery(html, name) {
 
 // Loads a gallery ajax style, and refreshes the layout. 
 function loadGallery(url, name) {
+
+	History.pushState($gallery.children(), document.title, $(this).attr('href'));
 	
 	//$('#gallery').addClass('hidden');
 	$.get(url, function(data) { 
-//		$('#gallery').empty(); //unload old gallery
 		$gallery.masonry('remove', $gallery.children());
 		var $figs = $(constructGallery(data, name));
 		$gallery.append($figs);
 		$gallery.masonry('appended', $figs);
-		$('#menu-title').text(name);
+		$('#menu-title a').text(name);
 		refresh();
 	});
 
 	
+}
+
+function hideMenu() {
+	$('#block1').css('height', '38').css('overflow', 'hidden');
+
+}
+
+// Shows the menu when hidden on small screens
+function showMenu() {
+	$('#block1').css('height', '100%').css('overflow', 'show');
 }
 
 //Setup Magnific-popup code for galleries,
@@ -70,6 +81,12 @@ function initPopups() {
 
 //basic refresh function to call when any change
 function refresh() {
+	if( $(window).width() < 440 ) {
+		hideMenu();
+	}
+	else {
+		$('#block1').css('height', '100%').css('overflow', 'show');
+	}
 	applyTiles();
 	initPopups();
 }
@@ -82,8 +99,8 @@ $(document).ready(function($) {
 	console.log("History: " + History.enabled);
 	//Bind history.js to statechange
 	History.Adapter.bind(window,'statechange',function(){ 
-		    var State = History.getState(); 
-		    History.log(State.data, State.title, State.url);
+		var State = History.getState(); 
+
 	});
 
 
@@ -91,6 +108,12 @@ $(document).ready(function($) {
 	//Rebind widow resize events to take place with imagesLoaded.js and masonry.js
 	$(window).resize(function() {
 		applyTiles();
+		if( $(window).width() < 440 ) {
+			hideMenu()
+		}else {
+			$('#block1').css('height', '100%').css('overflow', 'show');
+		}
+
 	});
 	refresh();
 });

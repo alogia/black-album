@@ -4,13 +4,12 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 
 
-
 img, embed, object{
 	max-width: 100%;
 }
 
 body {
-	margin: 0px;
+	margin: 0;
 	text-align: center;
 	padding: 0px 0px 0px 20px;
 	border-top: 4px solid #333;
@@ -31,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-	color: #444444;
+	color: #444;
 	text-decoration: none;
 }
 

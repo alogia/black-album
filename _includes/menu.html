@@ -6,9 +6,7 @@
 {% endfor %}
 {% assign names = names | split:' ' | uniq %}
 
-<link rel="stylesheet" type="text/css" href="/css/menu.css">
-
-<nav id="menu"> <b id="menu-title">Galleries</b>
+<nav id="menu"> <b id="menu-title"><a href="#" onclick="javascript:showMenu()">Galleries</a></b>
 	</p>
 	<ul class="active">
 	{% for al in names %}  

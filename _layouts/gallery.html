@@ -6,7 +6,6 @@
 		<title>{{site.album_title}}</title>
 
 		<link rel="stylesheet" type="text/css" href="/css/main.css">
-		<link rel="stylesheet" type="text/css" href="/css/menu.css">
 		<link rel="stylesheet" type="text/css" href="/css/gallery.css">
 		<link rel="stylesheet" type="text/css" href="/css/magnific-popup.css">
 
@@ -22,11 +21,12 @@
 	<body>
 		<div id='view'>
 			<div id='block1'>
-				<a class="toggle-nav invisible" href="#">Galleries</a>
 				{% include menu.html %}
 			</div>
 			<div id='block2'>
-				<div id='gallery'> {{content}} </div>
+				<div id='gallery'> 
+					<div class="column-sizer"></div>
+				</div>
 			</div>
 			
 		</div>
