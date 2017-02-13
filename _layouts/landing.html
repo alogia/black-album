@@ -1,34 +1,23 @@
 <html lang="en-us">
 	<head>
 		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{{site.album_title}}</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>{{site.album_title}}</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}css/main.css">
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		<link rel="stylesheet" type="text/css" href="/css/kenburned.css">
+		<link rel="stylesheet" type="text/css" href="/css/landing.css">
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-		<script type="text/javascript" src='{{ site.baseurl }}js/imagesloaded.pkgd.min.js'></script>
-
-		<script type="text/javascript">
-			function applyTiles() {
-				var posts = $('#posts ul');
-				posts.imagesLoaded(function() {
-					$('#posts ul').masonry({ itemSelector : '.post' });;
-				});
-			}
-			$(function() {
-				applyTiles();
-			});
-			$(window).resize(function() {
-				applyTiles();
-			});
-		</script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src='/js/imagesloaded.pkgd.min.js'></script>
+		<script type="text/javascript" src='/js/kenburned.min.js'></script>
+		<script type="text/javascript" src='/js/black.landing.js'></script>
 	</head>
+
 	<body>
+		<canvas id="kenburns">
+		</canvas>
 
-		<div class="landing">
-			{{ content }}
-		</div>
-
+		{{ content }}
 	</body>
 </html>

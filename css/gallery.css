@@ -102,6 +102,11 @@
 /* Hides the gallery menu under 440px */
 @media only screen and (max-width: 440px) {
 
+	body {
+		padding: 0px;
+	}
+
+
 	#block1 {
 		top:0px;
 		left:0px;
