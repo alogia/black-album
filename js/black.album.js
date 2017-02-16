@@ -119,6 +119,7 @@ $(document).ready(function($) {
 
 	});
 	refresh();
+	$('#menu ul li a').first().click();
 });
 
 

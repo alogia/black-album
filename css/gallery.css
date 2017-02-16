@@ -1,5 +1,5 @@
 /* Popup image */
-body.mfp-zoom-out-cur #header, body.mfp-zoom-out-cur #block1, body.mfp-zoom-out-cur #block2 {  
+body.mfp-zoom-out-cur #reader, body.mfp-zoom-out-cur #block1, body.mfp-zoom-out-cur #block2 {  
 	-webkit-filter: blur(2px); 
 	-moz-filter: blur(2px); 
 	-o-filter: blur(2px); 
@@ -18,20 +18,26 @@ img.mfp-img {
 } 
 
 #header {
+	z-index:20;
 	display:none;
+	background-color: rgba(34,34,34,0.85);
+
 }
 
 #title {
 	text-align: center;
-	color: white;
-	font-size: 5em;
-	text-transform: uppercase;
-	font-style: bold;
 	border-style: solid;
 	border-top: thick double;
 	border-bottom: thick double;
 	border-left:none;
 	border-right:none;
+}
+
+#title a {
+	color: white;
+	font-size: 5em;
+	text-transform: uppercase;
+	font-style: bold;
 	text-shadow: 2px 2px #000;
 }
 
@@ -40,12 +46,12 @@ img.mfp-img {
 }
 
 #contact ul {
-	display:block;
+	display: block;
 	text-align: center;
-	background: blue;
 	height: 20px;
 	margin: 0px;
 	list-style-type: none;
+	padding:5px;
 }
 
 #contact ul li {
@@ -60,33 +66,37 @@ img.mfp-img {
 
 #menu ul a {
 	color: #999;
-
-	-webkit-transition-property:color, text;
-	-webkit-transition-duration: 1s, 1s;
-	-webkit-transition-timing-function: linear, ease-in;
-
-	-moz-transition-property:color, text;
-	-moz-transition-duration:1s;
-	-moz-transition-timing-function: linear, ease-in;
-
-	-o-transition-property:color, text;
-	-o-transition-duration:1s;
-	-o-transition-timing-function: linear, ease-in;
+	letter-spacing: 2px;
+	font-variant: small-caps;
+	font-size: 20px;
+	padding: 5px;
+	transition: color 1s ease-in;
 }
 
 #menu ul {
-	margin: 15px;
+	width: 100%;
 	padding: 0px;
 	text-align: left;
+	list-style-type: none;
+	-webkit-overflow-scrolling: touch;
+}
+
+#menu ul li {
+	text-align: center;
+	transition: background-color 0.5s ease;
+    	border-radius: 3px;
 }
 
 #menu #menu-title a {
+	font-variant: small-caps;
+	font-size: 30px;
 	color: white;
+	border-bottom: medium solid;
 }
 
 #menu {
-	background: none repeat scroll 0% 0% #222;
-	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+	background: #333;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
 	border-radius: 3px;
 	border: solid 1px #FFF;
 	padding: 10px;
@@ -96,7 +106,7 @@ img.mfp-img {
 #gallery {
 	margin: 0 auto;
 	list-style:none;
-	background: #111;
+	background: #222;
 }
 
 #gallery figure {
@@ -204,10 +214,14 @@ img.mfp-img {
 
 	#menu ul {
 		text-align: center;
-		list-style-type: none;
+	}
+
+	#menu #menu-title a {
+		font-size: 20px;
 	}
 
 	#menu ul a {
+		font-size: 15px;
 		color: #999;
 	}
 
@@ -228,7 +242,7 @@ img.mfp-img {
 		position: fixed;
 		margin-top: -20px;
 		height: 20px;
-		width: 100%;
+		width: 140px;
 		bottom:0px;
 		z-index:20;
 	}
@@ -242,13 +256,13 @@ img.mfp-img {
 		margin:20px 0px 0px 10px;
 		padding: 5px;
 		height: 100%;
-		width: 100px;
+		width: 150px;
 		float: left;
 		overflow:show;
 	}
 
 	#block2 {
-		margin-left:120px;
+		margin-left:150px;
 	}
 
 	#gallery {
@@ -257,11 +271,13 @@ img.mfp-img {
 	}
 
 	#footer {
-		background:green;
+		width: 140px;
 		position: fixed;
-		height: 50px;
-		left:5px;
+		height: 70px;
 		bottom:0px;
+	}
+	#footer a {
+		font-size: 20px;
 	}
 
 	#view {
@@ -271,11 +287,6 @@ img.mfp-img {
 }
 
 @media only screen and (min-width: 441px) and (max-width: 620px) {
-/*
-	#gallery {
-		background: brown;
-	}
-	*/
 	#gallery figure {
 		margin: 10px;
 		width: 260px;
@@ -284,9 +295,6 @@ img.mfp-img {
 }
 
 @media only screen and (min-width: 620px) and (max-width: 800px) {
-/*	#gallery {
-		background: red;
-	} */
 	#gallery figure {
 		margin: 10px;
 		width: 200px;
@@ -295,11 +303,6 @@ img.mfp-img {
 }
 
 @media only screen and (min-width:800px) and (max-width: 1024px) {
-/*
-	#gallery {
-		background: blue;
-	}
-	*/
 	#gallery figure {
 		margin: 10px;
 		width: 195px;
@@ -308,8 +311,8 @@ img.mfp-img {
 
 }
 
+/* Computer screen size */
 @media only screen and (min-width: 1024px) {
-
 	#block1 {
 		top: 100px;
 	}
@@ -322,12 +325,13 @@ img.mfp-img {
 		display: block;
 		width: 98%;
 		position: fixed;
-		padding: 10px;
+		padding: 5px;
+		top: 0px;
 	}
 
 	#gallery figure {
 		margin: 10px;
-		width: 250px;
+		width: 450px;
 		float: left;
 	}
 
@@ -338,6 +342,10 @@ img.mfp-img {
 
 	#menu ul a {
 		color: #666;
+	}
+
+	#menu ul li:hover {
+		background: black;
 	}
 
 	#menu ul a:hover {
