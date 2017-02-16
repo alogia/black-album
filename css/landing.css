@@ -10,18 +10,3 @@ body {
 	z-index: -2;
 }
 
-#title {
-	position: relative;
-	top: 20%;
-	text: center;
-	color: white;
-	font-size: 5em;
-	text-transform: uppercase;
-	font-style: bold;
-	border-style: solid;
-	border-top: thick double;
-	border-bottom: thick double;
-	border-left:none;
-	border-right:none;
-	text-shadow: 2px 2px #000;
-}

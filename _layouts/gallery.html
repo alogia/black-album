@@ -19,6 +19,11 @@
 	</head>
 
 	<body>
+		<div id='header'>
+			<div id='title'>
+				<b>{{site.title}}</b>
+			</div>
+		</div>
 		<div id='view'>
 			<div id='block1'>
 				{% include menu.html %}
@@ -30,6 +35,10 @@
 			</div>
 			
 		</div>
-		<div id='footer'> <a href="about.html">About</a> </div>
+		<div id='footer'> 
+			<a href="about.html">About</a> 			
+			{% include contact.html %}
+		</div>
+
 	</body>
 </html>

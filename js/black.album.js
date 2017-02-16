@@ -2,7 +2,7 @@
 var name="Nick Parnell"
 var msgErr = "<h1>: (</h1><br>I don't know what you want....<br>";
 var templates = "/template/"
-var galleryTemplate = "<figure class='gallery-item'> <header class='gallery-icon'> <a class='popup' href='$URL' title='$TITLE' data-caption='© " + name + "'> <img src='$URL'></a> </header><figcaption class='gallery-caption'> <div class='entry-summary'> <h3>$TITLE</h3> <p>© " + name + " </p> </div> </figcaption> </figure>"
+var galleryTemplate = "<figure class='gallery-item'> <header class='gallery-icon'> <a class='popup' href='$URL' alt='$TITLE' data-caption='© " + name + "'> <img src='$URL'></a> </header><figcaption class='gallery-caption'> <div class='entry-summary'> <h3>$TITLE</h3> <p>© " + name + " </p> </div> </figcaption> </figure>"
 var $gallery;
 
 //A function to setup image loading code to work with masonry. 
@@ -73,7 +73,10 @@ function initPopups() {
 		removalDelay: 300,
 		mainClass: 'mfp-fade',
 		closeBtnInside: false,
-		closeOnContentClick: true
+		closeOnContentClick: true,
+		image: {
+			titleScr: 'alt'
+		}
 
 	});
 

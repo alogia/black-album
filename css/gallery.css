@@ -1,3 +1,63 @@
+/* Popup image */
+body.mfp-zoom-out-cur #header, body.mfp-zoom-out-cur #block1, body.mfp-zoom-out-cur #block2 {  
+	-webkit-filter: blur(2px); 
+	-moz-filter: blur(2px); 
+	-o-filter: blur(2px); 
+	-ms-filter: blur(2px); 
+	filter: blur(2px); 
+}
+
+.mfp-bg { 
+	background: #F7F6F5; 
+	opacity: 0.7; 
+}
+
+
+img.mfp-img { 
+	padding: 0; 
+} 
+
+#header {
+	display:none;
+}
+
+#title {
+	text-align: center;
+	color: white;
+	font-size: 5em;
+	text-transform: uppercase;
+	font-style: bold;
+	border-style: solid;
+	border-top: thick double;
+	border-bottom: thick double;
+	border-left:none;
+	border-right:none;
+	text-shadow: 2px 2px #000;
+}
+
+#contact {
+	margin 0px;
+}
+
+#contact ul {
+	display:block;
+	text-align: center;
+	background: blue;
+	height: 20px;
+	margin: 0px;
+	list-style-type: none;
+}
+
+#contact ul li {
+	display:inline-block;
+	margin 0px;
+	padding: 2px;
+}
+
+#contact ul li a {
+	font-size: 20;
+}
+
 #menu ul a {
 	color: #999;
 
@@ -17,6 +77,7 @@
 #menu ul {
 	margin: 15px;
 	padding: 0px;
+	text-align: left;
 }
 
 #menu #menu-title a {
@@ -27,7 +88,7 @@
 	background: none repeat scroll 0% 0% #222;
 	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
 	border-radius: 3px;
-	border: solid 1px rgba(99, 103, 106, 0.22);
+	border: solid 1px #FFF;
 	padding: 10px;
 }
 
@@ -82,10 +143,19 @@
 	opacity: 1; 
 }
 
-.gallery-caption h3  { 
+.gallery-icon a img {
+	transition: all .8s ease;
+}
+
+
+.gallery-item:hover .gallery-icon a img {
+	filter: brightness(50%);
+}
+
+.gallery-caption h3 { 
 	font-weight: bold; 
 	text-transform: uppercase; 
-	font-size: .9em; 
+	font-size: 1.3em; 
 	letter-spacing: 0.05em; 
 }
 
@@ -104,6 +174,10 @@
 
 	body {
 		padding: 0px;
+	}
+
+	#header {
+		display:none;
 	}
 
 
@@ -129,7 +203,7 @@
 	}
 
 	#menu ul {
-
+		text-align: center;
 		list-style-type: none;
 	}
 
@@ -150,6 +224,7 @@
 	}
 
 	#footer {
+		display:block;
 		position: fixed;
 		margin-top: -20px;
 		height: 20px;
@@ -164,7 +239,7 @@
 
 	#block1 {
 		position:fixed;
-		margin-top:20px;
+		margin:20px 0px 0px 10px;
 		padding: 5px;
 		height: 100%;
 		width: 100px;
@@ -182,10 +257,10 @@
 	}
 
 	#footer {
+		background:green;
 		position: fixed;
-		height: 20px;
-		width: 100px;
-		left:15px;
+		height: 50px;
+		left:5px;
 		bottom:0px;
 	}
 
@@ -234,6 +309,21 @@
 }
 
 @media only screen and (min-width: 1024px) {
+
+	#block1 {
+		top: 100px;
+	}
+
+	#block2 {
+		padding-top:120px;
+	}
+
+	#header {
+		display: block;
+		width: 98%;
+		position: fixed;
+		padding: 10px;
+	}
 
 	#gallery figure {
 		margin: 10px;
