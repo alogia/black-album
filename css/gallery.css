@@ -1,5 +1,5 @@
 /* Popup image */
-body.mfp-zoom-out-cur #reader, body.mfp-zoom-out-cur #block1, body.mfp-zoom-out-cur #block2 {  
+body.mfp-zoom-out-cur #footer, body.mfp-zoom-out-cur #block1, body.mfp-zoom-out-cur header, body.mfp-zoom-out-cur #block2 {  
 	-webkit-filter: blur(2px); 
 	-moz-filter: blur(2px); 
 	-o-filter: blur(2px); 
@@ -266,8 +266,12 @@ body > header {
 /* For all screens over 440px, show the gallery menu on the left side */
 @media only screen and (min-width: 441px) {
 
-	.headroom--unpinned {top: -100px;}
-	.headroom--pinned {top: 0;}
+	.headroom--unpinned {
+		top: -100px;
+	}
+	.headroom--pinned {
+		top: 0;
+	}
 
 	#block1 {
 		position:fixed;
@@ -334,7 +338,7 @@ body > header {
 		display: block;
 		width: 98%;
 		position: fixed;
-		padding: 5px;
+		padding: 5px 5px 0px 5px;
 		top: 0;
 		left: 0; 
 		right: 0; 
