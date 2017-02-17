@@ -25,10 +25,10 @@ img.mfp-img {
 
 * { box-sizing: border-box; }
 
-#header {
+body > header {
 	z-index:20;
 	display:none;
-	background-color: rgba(34,34,34,0.85);
+	background-color: rgba(34,34,34,0.75);
 
 }
 
@@ -196,7 +196,7 @@ img.mfp-img {
 		padding: 0px;
 	}
 
-	#header {
+	body > header {
 		display:none;
 	}
 
@@ -266,6 +266,9 @@ img.mfp-img {
 /* For all screens over 440px, show the gallery menu on the left side */
 @media only screen and (min-width: 441px) {
 
+	.headroom--unpinned {top: -100px;}
+	.headroom--pinned {top: 0;}
+
 	#block1 {
 		position:fixed;
 		margin:20px 0px 0px 10px;
@@ -327,12 +330,16 @@ img.mfp-img {
 		padding-top:120px;
 	}
 
-	#header {
+	body > header {
 		display: block;
 		width: 98%;
 		position: fixed;
 		padding: 5px;
-		top: 0px;
+		top: 0;
+		left: 0; 
+		right: 0; 
+		transition: all .5s ease-in-out;
+
 	}
 
 

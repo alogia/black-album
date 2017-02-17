@@ -99,6 +99,8 @@ function refresh() {
 // Doc's ready, Bro
 $(document).ready(function($) {
 
+	$(".headroom").headroom();
+
 	//Init history.js 
 	var History = window.History;
 	console.log("History: " + History.enabled);
