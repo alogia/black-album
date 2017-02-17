@@ -9,15 +9,17 @@ var $gallery;
 //Loads <figure> classes within the "gallery" ul
 function applyTiles() {
 	$gallery = $('#gallery').masonry({ 
-		itemSelector : '.gallery-item',
-		originLeft: false,
-		fitWidth: true
+		itemSelector: '.gallery-item',
+		columnWidth: '.column-sizer',
+		percentPosition: true,
+		gutter: 10 
 	});
 	$gallery.imagesLoaded(function() {
 		$gallery.masonry({ 
-			itemSelector : '.gallery-item',  
-			originLeft: false,
-			fitWidth: true
+			itemSelector: '.gallery-item',
+			columnWidth: '.column-sizer',
+			percentPosition: true,
+			gutter: 10 
 		});;
 	});
 }
@@ -41,7 +43,7 @@ function loadGallery(url, name) {
 	
 	//$('#gallery').addClass('hidden');
 	$.get(url, function(data) { 
-		$gallery.masonry('remove', $gallery.children());
+		$gallery.masonry('remove', $('figure'));
 		var $figs = $(constructGallery(data, name));
 		$gallery.append($figs);
 		$gallery.masonry('appended', $figs);

@@ -17,6 +17,14 @@ img.mfp-img {
 	padding: 0; 
 } 
 
+#gallery:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+* { box-sizing: border-box; }
+
 #header {
 	z-index:20;
 	display:none;
@@ -118,16 +126,18 @@ img.mfp-img {
     box-shadow: none;
 }
 
+#gallery .column-sizer, 
+#gallery figure {
+	width:48%;
+	margin:0 0 5px 0;
+}
+
 #gallery::after { 
 	content:""; 
 	display: block; 
 	clear: both; 
 }
-.gallery-item { 
-	position: relative; 
-	display: block; 
-	width: auto; 
-}
+
 
 .gallery-caption { 
 	position: absolute; 
@@ -227,14 +237,18 @@ img.mfp-img {
 
 	#gallery .column-sizer, 
 	#gallery figure {
-		width:75%;
+		width:100%;
+	}
+
+	#gallery figure {
+		float:left;
 	}
 
 	#gallery {
+		margin: 0 auto;
 		top:0px;
 		width: 100%;
 		list-style:none;
-		padding: 0px;
 	}
 
 	#footer {
@@ -242,9 +256,10 @@ img.mfp-img {
 		position: fixed;
 		margin-top: -20px;
 		height: 20px;
-		width: 140px;
+		width: 100%;
 		bottom:0px;
 		z-index:20;
+		background: #222;
 	}
 }
 
@@ -262,7 +277,7 @@ img.mfp-img {
 	}
 
 	#block2 {
-		margin-left:150px;
+		margin-left:180px;
 	}
 
 	#gallery {
@@ -288,25 +303,16 @@ img.mfp-img {
 
 @media only screen and (min-width: 441px) and (max-width: 620px) {
 	#gallery figure {
-		margin: 10px;
-		width: 260px;
-		float: right;
 	}
 }
 
 @media only screen and (min-width: 620px) and (max-width: 800px) {
 	#gallery figure {
-		margin: 10px;
-		width: 200px;
-		float: right;
 	}
 }
 
 @media only screen and (min-width:800px) and (max-width: 1024px) {
 	#gallery figure {
-		margin: 10px;
-		width: 195px;
-		float: right;
 	}
 
 }
@@ -329,10 +335,10 @@ img.mfp-img {
 		top: 0px;
 	}
 
+
 	#gallery figure {
-		margin: 10px;
-		width: 450px;
-		float: left;
+		float:left;
+
 	}
 
 	.gallery-caption .entry-summary { 
