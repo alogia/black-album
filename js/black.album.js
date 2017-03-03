@@ -1,5 +1,5 @@
 //Standard error message if displayed in html
-var name="Nick Parnell"
+var name="Tyler Thomas"
 var msgErr = "<h1>: (</h1><br>I don't know what you want....<br>";
 var templates = "/template/"
 var galleryTemplate = "<figure class='gallery-item'> <header class='gallery-icon'> <a class='popup' href='$URL' alt='$TITLE' data-caption='© " + name + "'> <img src='$URL'></a> </header><figcaption class='gallery-caption'> <div class='entry-summary'> <h3>$TITLE</h3> <p>© " + name + " </p> </div> </figcaption> </figure>"
